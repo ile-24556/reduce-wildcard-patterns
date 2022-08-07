@@ -14,7 +14,7 @@ suite('Extension Test Suite', () => {
         // Priority between star and question mark
         { input: ['a', 'b', '?', '*', 'd'], expected: ['*'] },
         { input: ['aazbb?cc', 'aa?bb*cc'], expected: ['aa?bb*cc'] },
-        // { input: ['aa?bb?cc', 'aa?bb*cc'], expected: ['aa?bb*cc'] },
+        { input: ['aa?bb?cc', 'aa?bb*cc'], expected: ['aa?bb*cc'] },
     ];
 
     test('Reduce cases', () => {
