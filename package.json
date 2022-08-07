@@ -23,7 +23,7 @@
     "commands": [
       {
         "command": "reduce-wildcard-patterns.reduce",
-        "title": "Hello World"
+        "title": "Reduce Wildcard Patterns"
       }
     ]
   },
