@@ -13,7 +13,7 @@ suite('Extension Test Suite', () => {
     ];
 
     test('Reduce cases', () => {
-        for (let pair of knownCases) {
+        for (const pair of knownCases) {
             assert.deepStrictEqual(makeLinesFight(pair.input), pair.expected);
         }
     });
