@@ -9,8 +9,7 @@ Compare each row and reduce the number of rows by wildcard matching.
 Only `*` and `?` are supported.
 `[characters]`, `[!characters]`, and `[^characters]` are not supported.
 
-Stars usually defeat question marks,
-but some patterns have unexpected results like the following.
+Stars usually defeat question marks, but some patterns have unexpected results.
 See [Issue](#issue).
 
 ## Usage
@@ -74,10 +73,11 @@ www[12].example.com
 
 ## Issue
 
+If the string containing the stars to be won also includes a question mark,
+and it appears later, it cannot win.
+
 ```js
-{
-    input: ['a?b?c', 'a?b*c'],
-    expected: ['a?b*c'],
-    actual: ['a?b?c'],
-}
+input: ['a?b?c', 'a?b*c'],
+expected: ['a?b*c'],
+actual: ['a?b?c'],
 ```
