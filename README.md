@@ -59,17 +59,17 @@ www?.example.com
 In this extension, brackets are treated as literal characters.
 
 ```
-www[12].example.com
 www1.example.com
 www2.example.com
-www?.example.com
+www[12].example.com
 ```
 
 The above results in the following.
 
 ```
+www1.example.com
+www2.example.com
 www[12].example.com
-www?.example.com
 ```
 
 ## Issue
