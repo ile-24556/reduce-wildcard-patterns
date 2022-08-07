@@ -9,6 +9,10 @@ Compare each row and reduce the number of rows by wildcard matching.
 Only `*` and `?` are supported.
 `[characters]`, `[!characters]`, and `[^characters]` are not supported.
 
+Stars usually defeat question marks,
+but some patterns have unexpected results like the following.
+See [Issue].
+
 ## Usage
 
 1.  Select lines.
@@ -66,4 +70,14 @@ The above results in the following.
 ```
 www[12].example.com
 www?.example.com
+```
+
+## Issue
+
+```js
+{
+    input: ['a?b?c', 'a?b*c'],
+    expected: ['a?b*c'],
+    actual: ['a?b?c'],
+}
 ```
