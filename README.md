@@ -11,7 +11,7 @@ Only `*` and `?` are supported.
 
 Stars usually defeat question marks,
 but some patterns have unexpected results like the following.
-See [Issue].
+See [Issue](#issue).
 
 ## Usage
 
