@@ -81,7 +81,7 @@ function translateGlobIntoRegex(text: string) {
     text = escapeRegexSpecialChar(text);
     text = text.replaceAll('?', '.');
     text = text.replaceAll('*', '.*?');
-    return text;
+    return '^' + text + '$';
 }
 
 const REGEX_SPECIAL_CHARS = '()[]{}+|^$\\.&~#';
