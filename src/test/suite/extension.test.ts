@@ -9,6 +9,7 @@ suite('Extension Test Suite', () => {
         { input: ['a', 'b', '?', '*', 'd'], expected: ['*'] },
         { input: ['aazbb?cc', 'aa?bb*cc'], expected: ['aa?bb*cc'] },
         { input: ['aa.bb', 'aa-bb'], expected: ['aa.bb', 'aa-bb'] },
+        { input: ['aa?bb?cc', 'aa?bb*cc'], expected: ['aa?bb*cc'] },
     ];
 
     test('Reduce cases', () => {
