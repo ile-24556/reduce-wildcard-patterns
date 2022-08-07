@@ -35,7 +35,67 @@ function reduce(editor: vscode.TextEditor, range: vscode.Range) {
 }
 
 function makeLinesFight(lines: string[]) {
-    return lines;
+    const uniqLines = Array.from(new Set(lines));
+    const patterns: Pattern[] = [];
+    for (const line of uniqLines) {
+        patterns.push(new Pattern(line));
+    }
+    const length = patterns.length;
+    for (let i = 0; i < length; i++) {
+        const a = patterns[i];
+        if (!a) {
+            continue;
+        }
+        for (let j = i + 1; j < length; j++) {
+            const b = patterns[j];
+            if (!b) {
+                continue;
+            }
+            if (a.qToStar === b.text) {
+                a.isAlive = false;
+            }
+            else if (a.regex.test(b.text)) {
+                b.isAlive = false;
+            }
+            else if (b.regex.test(a.text)) {
+                a.isAlive = false;
+            };
+        }
+    }
+    return patterns.filter(pat => pat.isAlive).map(pat => pat.text);
+}
+
+class Pattern {
+    public qToStar: string;
+    public regex: RegExp;
+    public isAlive = true;
+    constructor(
+        public text: string
+    ) {
+        this.qToStar = text.replaceAll('?', '*');
+        const results = translateGlobIntoRegex(text);
+        this.regex = new RegExp(results);
+    }
+};
+
+function translateGlobIntoRegex(text: string) {
+    text = escapeRegexSpecialChar(text);
+    text.replaceAll('*', '.*?');
+    text.replaceAll('?', '.');
+    return text;
+}
+
+const REGEX_SPECIAL_CHARS = '()[]{}+|^$\\.&~#';
+function escapeRegexSpecialChar(text: string) {
+    let result = '';
+    for (const char of text) {
+        if (REGEX_SPECIAL_CHARS.includes(char)) {
+            result += '\\' + char;
+        } else {
+            result += char;
+        }
+    }
+    return result;
 }
 
 function loadLines(editor: vscode.TextEditor, range: vscode.Range) {
