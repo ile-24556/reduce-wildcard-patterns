@@ -1,9 +1,6 @@
 # Change Log
 
-All notable changes to the "reduce-wildcard-patterns" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
+## [Unreleased] - 2022-08-07
 
 - Initial release
+- Priprity between `*` and `?` is unstable.
