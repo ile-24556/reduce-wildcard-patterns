@@ -73,8 +73,7 @@ class Pattern {
         public text: string
     ) {
         this.qToStar = text.replaceAll('?', '*');
-        const results = translateGlobIntoRegex(text);
-        this.regex = new RegExp(results);
+        this.regex = new RegExp(translateGlobIntoRegex(text));
     }
 };
 
