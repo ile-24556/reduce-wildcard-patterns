@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ile-24556/vscode-uniq-glob-patterns"
+    "url": "https://github.com/ile-24556/vscode-reduce-wildcard-patterns"
   },
   "activationEvents": [
     "onCommand:reduce-wildcard-patterns.reduce"
