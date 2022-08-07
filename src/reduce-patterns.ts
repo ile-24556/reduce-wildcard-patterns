@@ -79,8 +79,8 @@ class Pattern {
 
 function translateGlobIntoRegex(text: string) {
     text = escapeRegexSpecialChar(text);
-    text.replaceAll('*', '.*?');
-    text.replaceAll('?', '.');
+    text = text.replaceAll('*', '.*?');
+    text = text.replaceAll('?', '.');
     return text;
 }
 
