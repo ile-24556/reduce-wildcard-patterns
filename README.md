@@ -18,17 +18,20 @@ Only `*` and `?` are supported.
 
 ## Example 1
 
-A start matches any string including empty string.
+A star matches any string, including empty string.
 
 ```
-*.example.com
 www.example.com
+*.example.com
+www.example.org
+www*.example.org
 ```
 
 The above results in the following.
 
 ```
 *.example.com
+www*.example.org
 ```
 
 ## Example 2
@@ -49,7 +52,7 @@ www?.example.com
 
 ## Example 3
 
-Brackets are treated as literal characters in this extension.
+In this extension, brackets are treated as literal characters.
 
 ```
 www[12].example.com
