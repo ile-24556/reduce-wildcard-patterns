@@ -34,7 +34,7 @@ function reduce(editor: vscode.TextEditor, range: vscode.Range) {
     dumpLines(editor, range, uniqLines);
 }
 
-function makeLinesFight(lines: string[]) {
+export function makeLinesFight(lines: string[]) {
     const uniqLines = Array.from(new Set(lines));
     const patterns: Pattern[] = [];
     for (const line of uniqLines) {
