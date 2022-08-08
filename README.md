@@ -9,8 +9,6 @@ Compare each row and reduce the number of rows by wildcard matching.
 Only `*` and `?` are supported.
 `[characters]`, `[!characters]`, and `[^characters]` are not supported.
 
-Star always defeats question mark in comparisons.
-
 ### Example 1
 
 A star matches any string, including empty string.
@@ -62,6 +60,28 @@ www1.example.com
 www2.example.com
 www[12].example.com
 ```
+
+### Example 4
+
+Star always defeats question mark in comparisons.
+
+```
+a?b?c
+a?b*c
+x*y?z
+x?y*z
+```
+
+The above results in the following.
+
+```
+a?b*c
+x*y?z
+x?y*z
+```
+
+Here, the program does not decide the precedence between `x*y?z`, `x?y*z`.
+However, you can make `x*y*z` by your hand.
 
 ## Usage
 
