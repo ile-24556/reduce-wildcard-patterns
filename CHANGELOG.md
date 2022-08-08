@@ -10,4 +10,4 @@
 ## [0.1.0] - 2022-08-07
 
 - Initial release
-- Priority between `*` and `?` is unstable.
+- The precedence between `*` and `?` is unstable.
