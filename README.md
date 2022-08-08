@@ -45,7 +45,7 @@ www?.example.com
 
 ### Example 3
 
-In this extension, brackets are treated as literal characters.
+Brackets are treated as literal characters.
 
 ```
 www1.example.com
@@ -80,7 +80,7 @@ x*y?z
 x?y*z
 ```
 
-Here, the program does not decide the precedence between `x*y?z`, `x?y*z`.
+Here, the program does not decide the precedence between `x*y?z` and `x?y*z`.
 However, you can make `x*y*z` by your hand.
 
 ## Usage
