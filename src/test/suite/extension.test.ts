@@ -9,12 +9,14 @@ suite('Extension Test Suite', () => {
         { input: ['a', 'b', '?', 'c'], expected: ['?'] },
         { input: ['abcde', 'ace', 'a?e'], expected: ['abcde', 'a?e'] },
 
+        // Escaping special characters
         { input: ['a.b', 'a-b'], expected: ['a.b', 'a-b'] },
 
-        // Priority between star and question mark
+        // Precedence between star and question mark
         { input: ['a', 'b', '?', '*', 'd'], expected: ['*'] },
         { input: ['azb?c', 'a?b*c'], expected: ['a?b*c'] },
         { input: ['a?b?c', 'a?b*c'], expected: ['a?b*c'] },
+        // Does not decide
         { input: ['a*b?c', 'a?b*c'], expected: ['a*b?c', 'a?b*c'] },
     ];
 
