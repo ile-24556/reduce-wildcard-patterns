@@ -2,7 +2,7 @@
 	"name": "reduce-wildcard-patterns",
 	"displayName": "Reduce Wildcard Patterns",
 	"description": "Reduce wildcard pattern lines.",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"engines": {
 		"vscode": "^1.69.0"
 	},
