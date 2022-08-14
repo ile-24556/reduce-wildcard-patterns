@@ -1,4 +1,4 @@
-# Recduce Wildcard Patterns
+# Reduce Wildcard Patterns
 
 Visual Studio Code extension to reduce wildcard pattern lines.
 
