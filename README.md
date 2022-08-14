@@ -2,6 +2,8 @@
 
 Visual Studio Code extension to reduce wildcard pattern lines.
 
+![Usage animation](images/usage-animation.gif)
+
 ## Features
 
 Compare each row and reduce the number of rows by wildcard matching.
