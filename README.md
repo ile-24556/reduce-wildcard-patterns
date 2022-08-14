@@ -2,6 +2,13 @@
 
 Visual Studio Code extension to reduce wildcard pattern lines.
 
+## Usage
+
+1.  Select lines.
+    If no line is selected, the entire text is taken.
+2.  Press Ctrl+Shift+P or F1 to show *Command Palett*.
+3.  Execute **Reduce Wildcard Pattenrs**.
+
 ![Usage animation](images/usage-animation.gif)
 
 ## Features
@@ -84,10 +91,3 @@ x?y*z
 
 Here, the program does not decide the precedence between `x*y?z` and `x?y*z`.
 However, you can make `x*y*z` by your hand.
-
-## Usage
-
-1.  Select lines.
-    If no line is selected, the entire text is taken.
-2.  Press Ctrl+Shift+P or F1 to show *Command Palett*.
-3.  Execute **Reduce Wildcard Pattenrs**.
