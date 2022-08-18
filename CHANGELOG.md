@@ -4,6 +4,7 @@
 
 ### Added
 
+- Compress consecutive stars into one.
 - Extension icon.
 - Usage animation in the README.
 
