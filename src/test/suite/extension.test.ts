@@ -18,6 +18,11 @@ suite('Extension Test Suite', () => {
         { input: ['a?b?c', 'a?b*c'], expected: ['a?b*c'] },
         // Does not decide
         { input: ['a*b?c', 'a?b*c'], expected: ['a*b?c', 'a?b*c'] },
+        // Consecutive stars
+        { input: ['**'], expected: ['*'] },
+        { input: ['**', '*'], expected: ['*'] },
+        { input: ['*', '**'], expected: ['*'] },
+        { input: ['www.a', '***?.a', '**.a', '*.a'], expected: ['*.a'] },
     ];
 
     test('Reduce cases', () => {
