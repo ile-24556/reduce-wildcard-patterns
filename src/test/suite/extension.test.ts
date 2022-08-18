@@ -22,6 +22,7 @@ suite('Extension Test Suite', () => {
         { input: ['**'], expected: ['*'] },
         { input: ['**', '*'], expected: ['*'] },
         { input: ['*', '**'], expected: ['*'] },
+        { input: ['www.a', '***?.a', '**.a', '*.a'], expected: ['*.a'] },
     ];
 
     test('Reduce cases', () => {
