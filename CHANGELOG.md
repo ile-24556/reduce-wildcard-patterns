@@ -1,5 +1,13 @@
 # Change Log
 
+## [1.0.0] - 2022-08-19
+
+### Added
+
+- Compress consecutive stars into one.
+- Extension icon.
+- Usage animation in the README.
+
 ## [0.1.1] - 2022-08-08
 
 ### Fixed

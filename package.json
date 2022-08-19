@@ -1,57 +1,58 @@
 {
-	"name": "reduce-wildcard-patterns",
-	"displayName": "Reduce Wildcard Patterns",
-	"description": "Reduce wildcard pattern lines.",
-	"version": "0.1.1",
-	"engines": {
-		"vscode": "^1.69.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"publisher": "ile-24556",
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/ile-24556/vscode-reduce-wildcard-patterns"
-	},
-	"activationEvents": [
-		"onCommand:reduce-wildcard-patterns.reduce"
-	],
-	"main": "./out/extension.js",
-	"contributes": {
-		"commands": [
-			{
-				"command": "reduce-wildcard-patterns.reduce",
-				"title": "Reduce Wildcard Patterns"
-			}
-		]
-	},
-	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
-		"pretest": "npm run compile && npm run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
-	},
-	"devDependencies": {
-		"@types/vscode": "^1.69.0",
-		"@types/glob": "^7.2.0",
-		"@types/mocha": "^9.1.1",
-		"@types/node": "16.x",
-		"@typescript-eslint/eslint-plugin": "^5.31.0",
-		"@typescript-eslint/parser": "^5.31.0",
-		"eslint": "^8.20.0",
-		"glob": "^8.0.3",
-		"mocha": "^10.0.0",
-		"typescript": "^4.7.4",
-		"@vscode/test-electron": "^2.1.5"
-	},
-	"__metadata": {
-		"id": "e8c7d268-e110-4ef7-a8c9-e48577a61613",
-		"publisherDisplayName": "ile-24556",
-		"publisherId": "6798e54c-9936-43fa-88d5-a97658825081",
-		"isPreReleaseVersion": false
-	}
+  "name": "reduce-wildcard-patterns",
+  "displayName": "Reduce Wildcard Patterns",
+  "version": "1.0.0",
+  "description": "Reduce wildcard pattern lines.",
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ile-24556/vscode-reduce-wildcard-patterns"
+  },
+  "license": "MIT",
+  "publisher": "ile-24556",
+  "main": "./out/extension.js",
+  "scripts": {
+    "compile": "tsc -p ./",
+    "lint": "eslint src --ext ts",
+    "pretest": "npm run compile && npm run lint",
+    "test": "node ./out/test/runTest.js",
+    "vscode:prepublish": "npm run compile",
+    "watch": "tsc -watch -p ./"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "reduce-wildcard-patterns.reduce",
+        "title": "Reduce Wildcard Patterns"
+      }
+    ]
+  },
+  "activationEvents": [
+    "onCommand:reduce-wildcard-patterns.reduce"
+  ],
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.69.0",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "@vscode/test-electron": "^2.1.5",
+    "eslint": "^8.20.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "vscode": "^1.69.0"
+  },
+  "icon": "images/icon.png",
+  "__metadata": {
+    "id": "e8c7d268-e110-4ef7-a8c9-e48577a61613",
+    "publisherDisplayName": "ile-24556",
+    "publisherId": "6798e54c-9936-43fa-88d5-a97658825081",
+    "isPreReleaseVersion": false
+  }
 }

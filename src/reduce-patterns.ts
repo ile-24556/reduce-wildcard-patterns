@@ -51,9 +51,6 @@ export function makeLinesFight(lines: string[]) {
             if (!b) {
                 continue;
             }
-            if (a.qToStar === b.text) {
-                a.isAlive = false;
-            }
             else if (a.regex.test(b.text)) {
                 b.isAlive = false;
             }
@@ -66,16 +63,21 @@ export function makeLinesFight(lines: string[]) {
 }
 
 class Pattern {
-    public qToStar: string;
+    public text: string;
     public regex: RegExp;
     public isAlive = true;
     constructor(
-        public text: string
+        iText: string
     ) {
-        this.qToStar = text.replaceAll('?', '*');
-        this.regex = new RegExp(translateGlobIntoRegex(text));
+        this.text = compressConsecutiveStars(iText);
+        this.regex = new RegExp(translateGlobIntoRegex(this.text));
     }
 };
+
+function compressConsecutiveStars(text: string) {
+    const pattern = /\*+/g;
+    return text.replaceAll(pattern, '*');
+}
 
 function translateGlobIntoRegex(text: string) {
     text = escapeRegexSpecialChar(text);
