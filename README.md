@@ -15,8 +15,10 @@ Visual Studio Code extension to reduce wildcard pattern lines.
 
 Compare each row and reduce the number of rows by wildcard matching.
 
-Only `*` and `?` are supported.
-`[characters]`, `[!characters]`, and `[^characters]` are not supported.
+- `*` matches any string, including empty string.
+- `?` matches any single character.
+- `[characters]`, `[!characters]`, and `[^characters]` are not supported.
+- Consecutive `*` are compressed into one.
 
 ### Example 1
 
