@@ -1,5 +1,4 @@
 import * as vscode from 'vscode';
-
 export function main() {
     const editor = vscode.window.activeTextEditor;
     if (!editor) {
@@ -65,15 +64,15 @@ export function makeLinesFight(lines: string[]) {
 class Pattern {
     public text: string;
     public regex: RegExp;
-    public isPredatory = true;
+    public isPredatory = false;
     public isAlive = true;
     constructor(
         iText: string
     ) {
         this.text = compressConsecutiveStars(iText);
         this.regex = new RegExp(translateGlobIntoRegex(this.text));
-        if (this.text.indexOf('*') === -1 && this.text.indexOf('?') === -1) {
-            this.isPredatory = false;
+        if (this.text.indexOf('*') !== -1 || this.text.indexOf('?') !== -1) {
+            this.isPredatory = true;
         }
     }
 };
