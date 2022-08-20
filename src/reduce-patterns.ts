@@ -56,7 +56,7 @@ export function makeLinesFight(lines: string[]) {
             }
             else if (b.regex.test(a.text)) {
                 a.isAlive = false;
-            };
+            }
         }
     }
     return patterns.filter(pat => pat.isAlive).map(pat => pat.text);
@@ -65,12 +65,16 @@ export function makeLinesFight(lines: string[]) {
 class Pattern {
     public text: string;
     public regex: RegExp;
+    public isPredatory = true;
     public isAlive = true;
     constructor(
         iText: string
     ) {
         this.text = compressConsecutiveStars(iText);
         this.regex = new RegExp(translateGlobIntoRegex(this.text));
+        if (this.text.indexOf('*') === -1 && this.text.indexOf('?') === -1) {
+            this.isPredatory = false;
+        }
     }
 };
 
