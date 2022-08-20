@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+
 export function main() {
     const editor = vscode.window.activeTextEditor;
     if (!editor) {
