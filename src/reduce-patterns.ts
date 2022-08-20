@@ -51,10 +51,10 @@ export function makeLinesFight(lines: string[]) {
             if (!b || !b.isAlive) {
                 continue;
             }
-            else if (a.regex.test(b.text)) {
+            else if (a.isPredatory && a.regex.test(b.text)) {
                 b.isAlive = false;
             }
-            else if (b.regex.test(a.text)) {
+            else if (b.isPredatory && b.regex.test(a.text)) {
                 a.isAlive = false;
             }
         }
