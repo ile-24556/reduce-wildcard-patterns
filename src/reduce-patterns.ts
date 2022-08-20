@@ -110,11 +110,11 @@ function loadLines(editor: vscode.TextEditor, range: vscode.Range) {
     return nonemptyLines;
 }
 
-const NEWLINE = '\n';
 function dumpLines(editor: vscode.TextEditor, range: vscode.Range, lines: string[]) {
     let text = '';
     if (lines.length) {
-        text = lines.join(NEWLINE) + NEWLINE;
+        const newline = '\n';
+        text = lines.join(newline) + newline;
     }
     editor.edit(editBuilder => editBuilder.replace(range, text));
 }
