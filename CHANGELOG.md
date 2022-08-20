@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased]
+
+### Changed
+
+- Improve execution time.
+- If no lines remain, output an empty string.
+  Previously, an excessive line break was added.
+
 ## [1.0.0] - 2022-08-19
 
 ### Added
