@@ -43,12 +43,12 @@ export function makeLinesFight(lines: string[]) {
     const length = patterns.length;
     for (let i = 0; i < length; i++) {
         const a = patterns[i];
-        if (!a) {
+        if (!a || !a.isAlive) {
             continue;
         }
         for (let j = i + 1; j < length; j++) {
             const b = patterns[j];
-            if (!b) {
+            if (!b || !b.isAlive) {
                 continue;
             }
             else if (a.regex.test(b.text)) {
