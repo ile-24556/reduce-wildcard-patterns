@@ -43,20 +43,20 @@ export function makeLinesFight(lines: string[]) {
     const length = patterns.length;
     for (let i = 0; i < length; i++) {
         const a = patterns[i];
-        if (!a) {
+        if (!a || !a.isAlive) {
             continue;
         }
         for (let j = i + 1; j < length; j++) {
             const b = patterns[j];
-            if (!b) {
+            if (!b || !b.isAlive) {
                 continue;
             }
-            else if (a.regex.test(b.text)) {
+            else if (a.isPredatory && a.regex.test(b.text)) {
                 b.isAlive = false;
             }
-            else if (b.regex.test(a.text)) {
+            else if (b.isPredatory && b.regex.test(a.text)) {
                 a.isAlive = false;
-            };
+            }
         }
     }
     return patterns.filter(pat => pat.isAlive).map(pat => pat.text);
@@ -65,12 +65,16 @@ export function makeLinesFight(lines: string[]) {
 class Pattern {
     public text: string;
     public regex: RegExp;
+    public isPredatory = false;
     public isAlive = true;
     constructor(
         iText: string
     ) {
         this.text = compressConsecutiveStars(iText);
         this.regex = new RegExp(translateGlobIntoRegex(this.text));
+        if (this.text.indexOf('*') !== -1 || this.text.indexOf('?') !== -1) {
+            this.isPredatory = true;
+        }
     }
 };
 
@@ -107,8 +111,11 @@ function loadLines(editor: vscode.TextEditor, range: vscode.Range) {
     return nonemptyLines;
 }
 
-const NEWLINE = '\n';
 function dumpLines(editor: vscode.TextEditor, range: vscode.Range, lines: string[]) {
-    const text = lines.join(NEWLINE) + NEWLINE;
+    let text = '';
+    if (lines.length) {
+        const newline = '\n';
+        text = lines.join(newline) + newline;
+    }
     editor.edit(editBuilder => editBuilder.replace(range, text));
 }
