@@ -1,6 +1,6 @@
 import { performance } from 'perf_hooks';
 import { makeLinesFight } from '../reduce-patterns';
-import * as m365Endpoints from './suite/microsoft365-worldwide.json';
+import * as m365Endpoints from './microsoft365-worldwide.json';
 
 
 export function measure() {
